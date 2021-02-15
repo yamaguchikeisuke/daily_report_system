@@ -11,15 +11,13 @@
                     <c:import url="_form.jsp" />
                 </form>
 
-                <p>
-                    <a href="#" onclick="confirmDestroy();">この従業員情報を削除する</a>
-                </p>
+                <p><a href="#" onclick="confirmDestroy();">この従業員情報を削除する</a></p>
                 <form method="POST" action="<c:url value='/employees/destroy' />">
                     <input type="hidden" name="_token" value="${_token }" />
                 </form>
                 <script>
                     function confirmDestroy() {
-                        if (confirm("本当に削除してよろしいですか？")) {
+                        if(confirm("本当に削除してよろしいですか？")) {
                             document.forms[1].submit();
                         }
                     }
@@ -30,8 +28,6 @@
             </c:otherwise>
         </c:choose>
 
-        <p>
-            <a href="<c:url value='/employees/index' />">一覧に戻る</a>
-        </p>
+        <p><a href="<c:url value='/employees/index' />">一覧に戻る</a></p>
     </c:param>
 </c:import>
